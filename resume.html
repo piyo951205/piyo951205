@@ -71,23 +71,28 @@ li {
     color: #444;
 }
 
-button{
-    padding:8px 15px;
-    border:none;
-    background:#4facfe;
-    color:white;
-    border-radius:5px;
-    cursor:pointer;
+/* 按鈕樣式 */
+.btn-ig {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
     transition: all 0.3s ease;
 }
 
-button:hover{
-    background:#3a8de0;
+.btn-ig:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-button:active {
-    transform: scale(0.95);
+.btn-ig i {
+    margin-right: 8px;
 }
 </style>
 </head>
@@ -102,10 +107,8 @@ button:active {
 
   // 嘗試直接播放
   audio.play().catch(() => {
-    // 若被擋，快速解除靜音再播放
     audio.muted = true;
     audio.play();
-
     setTimeout(() => {
       audio.muted = false;
     }, 100);
@@ -151,20 +154,14 @@ button:active {
 
     <div class="section">
         <h2>✨ 自我介紹</h2>
-        <p id="intro">我是來自亞大一年級的資傳系學生。熱愛透過鏡頭紀錄生活中的光影變化 📸，並在武道場上揮灑汗水 🥋。目前除了學業，也活躍於婚禮與人像攝影接案。希望能在不同領域中精進自我，也期待能遇到志同道合的朋友！🍀</p>
-        <button onclick="editIntro()">📝 編輯自我介紹</button>
+        <p>我是來自亞大一年級的資傳系學生。熱愛透過鏡頭紀錄生活中的光影變化 📸，並在武道場上揮灑汗水 🥋。目前除了學業，也活躍於婚禮與人像攝影接案。期待能遇到志同道合的朋友！🍀</p>
+        
+        <a href="https://www.instagram.com/levi_._._17/" target="_blank" class="btn-ig">
+            <i class="fab fa-instagram"></i> IG:levi_._._17
+        </a>
     </div>
 
 </div>
-
-<script>
-function editIntro(){
-    let text = prompt("請輸入自我介紹");
-    if(text){
-        document.getElementById("intro").innerText = text;
-    }
-}
-</script>
 
 </body>
 </html>
