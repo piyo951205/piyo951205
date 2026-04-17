@@ -78,10 +78,24 @@ button:hover{
 </head>
 
 <body>
-    <audio id="bgMusic" loop>
-    <source src="music.mp3.mp3" type="audio/mpeg">
+    <audio id="bgm" autoplay loop playsinline>
+  <source src="audio/music.mp3.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+  const audio = document.getElementById("bgm");
+
+  // 嘗試直接播放
+  audio.play().catch(() => {
+    // 若被擋，快速解除靜音再播放
+    audio.muted = true;
+    audio.play();
+
+    setTimeout(() => {
+      audio.muted = false;
+    }, 100);
+  });
+</script>
 <div class="resume">
 
     <div class="top">
@@ -119,37 +133,7 @@ button:hover{
 </div>
 
 <script>
-function editIntro(){
-    let text = prompt("請輸入自我介紹");
-    if(text){
-        document.getElementById("intro").innerText = text;
-    }
-}
-<script>
-// 這是你原本就有的函數，保留它
-function editIntro(){
-    let text = prompt("請輸入自我介紹");
-    if(text){
-        document.getElementById("intro").innerText = text;
-    }
-}
 
-// --- 在這裡加入方案一的程式碼 ---
-
-// 監聽整個網頁的點擊動作
-window.addEventListener('click', function() {
-    const music = document.getElementById('bgMusic');
-    
-    // 檢查音樂是否正在播放，如果還沒播，就啟動它
-    if (music.paused) {
-        music.play().then(() => {
-            console.log("音樂開始播放了！");
-        }).catch(error => {
-            console.log("播放失敗：", error);
-        });
-    }
-}, { once: true }); // once: true 表示點擊一次後，這個監聽功能就會自動移除，不會重複執行
-</script>
 
 </body>
 </html>
