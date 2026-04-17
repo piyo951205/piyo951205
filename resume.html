@@ -10,7 +10,7 @@
 <style>
 body{
     font-family: "Segoe UI", sans-serif;
-    /* 改為柔和的漸層背景 */
+    /* 柔和的漸層背景，營造新海誠般的空色感 */
     background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     margin:0;
     min-height: 100vh;
@@ -57,13 +57,18 @@ body{
 }
 
 .section h2{
-    margin-bottom:10px;
+    margin-bottom:15px;
     color:#333;
 }
 
 ul{
     margin:0;
     padding-left:20px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #444;
 }
 
 button{
@@ -73,13 +78,11 @@ button{
     color:white;
     border-radius:5px;
     cursor:pointer;
-    /* 加入平滑動畫 */
     transition: all 0.3s ease;
 }
 
 button:hover{
     background:#3a8de0;
-    /* 增加懸停時的小縮放 */
     transform: scale(1.05);
 }
 
@@ -91,7 +94,7 @@ button:active {
 
 <body>
     <audio id="bgm" autoplay loop playsinline>
-  <source src="audio/music.mp3.mp3" type="audio/mpeg">
+  <source src="music.mp3.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -115,16 +118,26 @@ button:active {
         <img src="photo.jpg.jpg" class="photo">
         <div class="info">
             <h1>王宥幃 👋</h1>
-            <p>🎓 亞洲大學學生</p>
+            <p>🎓 亞洲大學學生 | 📷 自由攝影師 | 🥋 跆拳道教練</p>
             <p>🆔 學號：AU114024061</p>
             <p><i class="fas fa-envelope"></i> Email：example@email.com</p>
+            <p><i class="fas fa-phone"></i> 電話：0907-959-825</p>
         </div>
     </div>
 
     <div class="section">
         <h2>🎓 學歷</h2>
         <ul>
-            <li>亞洲大學 - 就讀中</li>
+            <li>亞洲大學 - 資傳系就讀中</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>💼 專業經歷</h2>
+        <ul>
+            <li>📷 <b>婚禮攝影接案</b>：捕捉每一份珍貴的幸福瞬間。</li>
+            <li>📸 <b>人像外拍</b>：專注於光影交織的生命故事。</li>
+            <li>🥋 <b>跆拳道教練</b>：推廣武術精神，培養意志力與體能。</li>
         </ul>
     </div>
 
@@ -132,15 +145,15 @@ button:active {
         <h2>🛠️ 技能</h2>
         <ul>
             <li><i class="fab fa-html5"></i> HTML / CSS / JavaScript</li>
-            <li>🎨 設計與影像處理</li>
+            <li>🎨 設計與影像處理 (PS / LR / PR)</li>
+            <li>🥋 跆拳道專業執教與武術指導</li>
         </ul>
     </div>
 
     <div class="section">
         <h2>✨ 自我介紹</h2>
-        <p id="intro">我是來自亞大一年級的學生，目前就讀資傳系，興趣是拍照 📸，希望可以脫單🍀 
-            ig:levi_._._17</p>
-        <button onclick="editIntro()">📝 ig:levi_._._17</button>
+        <p id="intro">我是來自亞大一年級的資傳系學生。熱愛透過鏡頭紀錄生活中的光影變化 📸，並在武道場上揮灑汗水 🥋。目前除了學業，也活躍於婚禮與人像攝影接案。希望能在不同領域中精進自我，也期待能遇到志同道合的朋友！🍀</p>
+        <button onclick="editIntro()">📝 編輯自我介紹</button>
     </div>
 
 </div>
