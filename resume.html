@@ -78,6 +78,9 @@ button:hover{
 </head>
 
 <body>
+    <audio id="bgMusic" loop>
+    <source src="music.mp3.mp3" type="audio/mpeg">
+</audio>
 
 <div class="resume">
 
@@ -122,6 +125,30 @@ function editIntro(){
         document.getElementById("intro").innerText = text;
     }
 }
+<script>
+// 這是你原本就有的函數，保留它
+function editIntro(){
+    let text = prompt("請輸入自我介紹");
+    if(text){
+        document.getElementById("intro").innerText = text;
+    }
+}
+
+// --- 在這裡加入方案一的程式碼 ---
+
+// 監聽整個網頁的點擊動作
+window.addEventListener('click', function() {
+    const music = document.getElementById('bgMusic');
+    
+    // 檢查音樂是否正在播放，如果還沒播，就啟動它
+    if (music.paused) {
+        music.play().then(() => {
+            console.log("音樂開始播放了！");
+        }).catch(error => {
+            console.log("播放失敗：", error);
+        });
+    }
+}, { once: true }); // once: true 表示點擊一次後，這個監聽功能就會自動移除，不會重複執行
 </script>
 
 </body>
