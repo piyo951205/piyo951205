@@ -5,11 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>個人履歷</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 body{
     font-family: "Segoe UI", sans-serif;
-    background:#f5f6f7;
+    /* 改為柔和的漸層背景 */
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     margin:0;
+    min-height: 100vh;
 }
 
 .resume{
@@ -69,10 +73,18 @@ button{
     color:white;
     border-radius:5px;
     cursor:pointer;
+    /* 加入平滑動畫 */
+    transition: all 0.3s ease;
 }
 
 button:hover{
     background:#3a8de0;
+    /* 增加懸停時的小縮放 */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
 }
 </style>
 </head>
@@ -96,44 +108,51 @@ button:hover{
     }, 100);
   });
 </script>
+
 <div class="resume">
 
     <div class="top">
         <img src="photo.jpg.jpg" class="photo">
         <div class="info">
-            <h1>王宥幃</h1>
-            <p>亞洲大學學生</p>
-            <p>學號：AU114024061</p>
-            <p>Email：example@email.com</p>
-            <p>電話：0907-959-825</p>
+            <h1>王宥幃 👋</h1>
+            <p>🎓 亞洲大學學生</p>
+            <p>🆔 學號：AU114024061</p>
+            <p><i class="fas fa-envelope"></i> Email：example@email.com</p>
+            <p><i class="fas fa-phone"></i> 電話：0907-959-825</p>
         </div>
     </div>
 
     <div class="section">
-        <h2>學歷</h2>
+        <h2>🎓 學歷</h2>
         <ul>
             <li>亞洲大學 - 就讀中</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>技能</h2>
+        <h2>🛠️ 技能</h2>
         <ul>
-            <li>HTML / CSS / JavaScript</li>
-            <li>設計與影像處理</li>
+            <li><i class="fab fa-html5"></i> HTML / CSS / JavaScript</li>
+            <li>🎨 設計與影像處理</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>自我介紹</h2>
-        <p id="intro">我是來自亞大一年級的學生，目前就讀資傳系，興趣是拍照，希望可以脫單</p>
-        <button onclick="editIntro()">編輯自我介紹</button>
+        <h2>✨ 自我介紹</h2>
+        <p id="intro">我是來自亞大一年級的學生，目前就讀資傳系，興趣是拍照 📸，希望可以脫單 🍀</p>
+        <button onclick="editIntro()">📝 編輯自我介紹</button>
     </div>
 
 </div>
 
 <script>
-
+function editIntro(){
+    let text = prompt("請輸入自我介紹");
+    if(text){
+        document.getElementById("intro").innerText = text;
+    }
+}
+</script>
 
 </body>
 </html>
